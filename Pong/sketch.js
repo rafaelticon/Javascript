@@ -1,8 +1,8 @@
 //ball variables
 let xBall = 300;
 let yBall = 200;
-let diameter = 30
-let radius = diameter/2
+let diameter = 30;
+let radius = diameter/2;
 let collision = false;
 
 //ball speed
@@ -12,8 +12,8 @@ let speedYBall = 6;
 //paddle variables
 let xPaddle = 5;
 let yPaddle = 150;
-let paddleLenght = 10
-let paddleHeight = 90
+let paddleLenght = 10;
+let paddleHeight = 90;
 
 //Cpu paddle variables
 let xPaddleCpu = 585;
@@ -30,9 +30,9 @@ let ponto;
 let trilha;
 
 function preload(){
-  trilha = loadSound("trilha.mp3")
-  raquetada = loadSound("raquetada.mp3")
-  ponto = loadSound("ponto.mp3")
+  trilha = loadSound("trilha.mp3");
+  raquetada = loadSound("raquetada.mp3");
+  ponto = loadSound("ponto.mp3");
   }
 
 function setup() {
@@ -46,13 +46,14 @@ function draw() {
   moveBall();
   boardCollision();
   showPadde(xPaddle,yPaddle);
-  showPadde(xPaddleCpu,yPaddleCpu)
+  showPadde(xPaddleCpu,yPaddleCpu);
   movePaddle();
   collide(xPaddle, yPaddle);
-  collide(xPaddleCpu, yPaddleCpu)
+  collide(xPaddleCpu, yPaddleCpu);
   movimentaCpu();
   showScore();
   scoreCount();
+  midLine();
      
 }
 
@@ -110,30 +111,38 @@ function movimentaCpu(){
 }
 
 function showScore(){
-  //stroke(255)
-  textAlign(CENTER)
-  textSize(25)
-  fill(color(255, 140, 0))
-  rect(130, 5, 40, 25)
-  fill(255)
+  textAlign(CENTER);
+  textSize(25);
+  fill(color(255, 140, 0));
+  rect(130, 5, 40, 25);
+  fill(255);
   text(score, 150, 26);
-  fill(color(255, 140, 0))
-  rect(430, 5, 40, 25)
-  fill(255)
+  fill(color(255, 140, 0));
+  rect(430, 5, 40, 25);
+  fill(255);
   text(scoreCpu, 450, 26);
 }
 
 function scoreCount(){
   if (xBall >585){
-    score += 1
-    xBall = 300
-    yBall = 200
+    score += 1;
+    xBall = 300;
+    yBall = 200;
     ponto.play();
   }
   if (xBall < 15){
     scoreCpu += 1;
-    xBall = 300
-    yBall = 200
+    xBall = 300;
+    yBall = 200;
     ponto.play();
   }
+}
+
+function midLine(){
+  fill(255);
+  rect(300, 25, 8, 40);
+  rect(300, 100, 8, 40);
+  rect(300, 180, 8, 40);
+  rect(300, 260, 8, 40);
+  rect(300, 340, 8, 40);
 }
