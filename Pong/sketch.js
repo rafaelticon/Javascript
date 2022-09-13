@@ -42,6 +42,7 @@ function setup() {
 
 function draw() {
   background(0);
+  midLine();
   showBall();
   moveBall();
   boardCollision();
@@ -54,6 +55,17 @@ function draw() {
   showScore();
   scoreCount();
      
+}
+
+function midLine(){
+  fill(255)
+  rect(300, 25, 8, 40)
+  rect(300, 100, 8, 40)
+  rect(300, 180, 8, 40)
+  rect(300, 260, 8, 40)
+  rect(300, 340, 8, 40)
+
+  
 }
 
 function showBall(){
