@@ -1,2 +1,2 @@
 # Javascript
-Javascript projects and study files
+Javascript projects and study material
