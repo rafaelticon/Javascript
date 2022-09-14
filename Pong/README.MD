@@ -1,1 +1,1 @@
-Pong game project using Javascript
+Pong game using Javascript
